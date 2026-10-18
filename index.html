@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product URL Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Card 1: Header & Hero -->
+    <div class="card">
+        <div class="nav-header">
+            <div class="brand-logo">
+                <div class="logo-icon">🛡️</div>
+                <div>
+                    <div class="brand-title">REVORA</div>
+                    <div class="brand-subtitle">REVIEW AUTHENTICITY</div>
+                </div>
+            </div>
+            <div class="hamburger-icon">☰</div>
+        </div>
+        <div class="badge">SMART REVIEW ANALYSIS</div>
+        <div class="hero-title">Shop smarter.</div>
+        <div class="hero-title-blue">Trust better.</div>
+        <div class="hero-desc">Analyze product reviews to uncover potentially fake feedback.</div>
+    </div>
+
+    <!-- Card 2: Input & Action -->
+    <div class="card">
+        <label class="input-label" for="productUrl">Product URL</label>
+        <div class="input-wrapper">
+            <span class="input-icon">🔗</span>
+            <input 
+                type="url" 
+                id="productUrl" 
+                class="custom-input" 
+                placeholder="Paste Flipkart product link..." 
+                autocomplete="off"
+            />
+        </div>
+        <button id="analyzeBtn" class="submit-btn">
+            <span>🔍</span>
+            <span>Analyze reviews</span>
+        </button>
+        <p class="helper-text">Supports Flipkart product URLs</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
