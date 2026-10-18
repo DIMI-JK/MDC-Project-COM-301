@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product URL Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Card 1: Header & Hero -->
+    <div class="card">
+        <div class="nav-header">
+            <div class="brand-logo">
+                <div class="logo-icon">🛡️</div>
+                <div>
+                    <div class="brand-title">REVORA</div>
+                    <div class="brand-subtitle">REVIEW AUTHENTICITY</div>
+                </div>
+            </div>
+            <div class="hamburger-icon">☰</div>
+        </div>
+        <div class="badge">SMART REVIEW ANALYSIS</div>
+        <div class="hero-title">Shop smarter.</div>
+        <div class="hero-title-blue">Trust better.</div>
+        <div class="hero-desc">Analyze product reviews to uncover potentially fake feedback.</div>
+    </div>
+
+    <!-- Card 2: Input & Action -->
+    <div class="card">
+        <label class="input-label" for="productUrl">Product URL</label>
+        <div class="input-wrapper">
+            <span class="input-icon">🔗</span>
+            <input 
+                type="url" 
+                id="productUrl" 
+                class="custom-input" 
+                placeholder="Paste Flipkart product link..." 
+                autocomplete="off"
+            />
+        </div>
+        <button id="analyzeBtn" class="submit-btn" type="button">
+            <span>🔍</span>
+            <span>Analyze reviews</span>
+        </button>
+        <p class="helper-text">Supports Flipkart product URLs</p>
+    </div>
+
+    
+
+<!-- Card 3: Analysis Results -->
+    <div class="results-section" id="resultsSection" hidden>
+
+    <div class="results-heading">
+        <div class="badge">ANALYSIS REPORT</div>
+        <h2>Review Analysis Results</h2>
+        <p>Here's what Revora found in this product's reviews.</p>
+    </div>
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <p>Total Reviews</p>
+            <h2 id="totalReviews">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Evaluated Reviews</p>
+            <h2 id="evaluatedReviews">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Genuine Reviews</p>
+            <h2 class="genuine-number" id="genuineReviews">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Likely Fake</p>
+            <h2 class="fake-number" id="fakeReviews">0</h2>
+        </div>
+
+    </div>
+
+    <div class="chart-card">
+        <h3>Review Distribution</h3>
+        <p class="chart-subtitle">
+            Genuine reviews compared with likely fake reviews
+        </p>
+
+        <div class="chart-layout">
+            <canvas id="reviewPieChart"
+                    width="280"
+                    height="280"
+                    aria-label="Pie chart showing genuine and likely fake reviews">
+            </canvas>
+
+            <div class="chart-legend">
+                <div class="legend-row">
+                    <span class="legend-dot genuine-dot"></span>
+                    <span>Genuine Reviews</span>
+                    <strong id="genuinePercentage">0%</strong>
+                </div>
+
+                <div class="legend-row">
+                    <span class="legend-dot fake-dot"></span>
+                    <span>Likely Fake</span>
+                    <strong id="fakePercentage">0%</strong>
+                </div>
+
+                <div class="skipped-row">
+                    Not evaluated: <strong id="skippedReviews">0</strong>
+                </div>
+            </div>
+        </div>
+
+        <a href="http://127.0.0.1:5000/download"
+           id="downloadCsvBtn"
+           class="download-btn">
+            ↓ Download Final Review CSV
+        </a>
+    </div>
+
+    </div>
+
+    <!-- Status messages -->
+    <p id="resultStatus" class="result-status" role="status"
+       aria-live="polite"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
