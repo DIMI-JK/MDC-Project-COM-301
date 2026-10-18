@@ -4,3 +4,9 @@
 # Bytecode cache
 __pycache__/
 *.pyc
+
+.DS_Store
+
+review_predictions.csv
+
+flipkart_reviews.csv
